@@ -10,12 +10,20 @@
 
 2. Service container
 - `Service container`, còn được gọi là Inversion of Control Container (trước phiên bản 5), có thể hiểu nôm na là  tấm bản đò, một dịch vụ tổng đài để quản lý class dependency và thực hiện inject class indepent.
+- `Service container`: định nghĩa các phương thức bind, resolve, singleton,... và `Service provider` sẽ dùng các phương thức này để thao tác với các service
 
 ## 3. Service Providers
 - `Service provider`: trung tâm của laravel bootstraping. là trung tâm của việc khởi tạo tất cả các ứng dụng trong Laravel, các thành phần core sẽ được khởi tạo từ Service Provider, Các Service Provider là nơi sẽ thực hiện việc khai báo service và bind vào trong Service Container.
 - Chỉ có duy nhất boostrap/app.php thực hiện binding trực tiếp các service, ngoài ra, tất cả đều dc đăng kí tên class để thực hiện binding tong mảng providers trong config/app.php
-
+- tham khảo:
+https://viblo.asia/p/laravel-beauty-tim-hieu-ve-service-provider-zb7vDVJnMjKd
+https://viblo.asia/p/tim-hieu-service-provider-trong-laravel-bWrZngBrlxw
+https://laravel.com/docs/5.5/providers
 
 ## 3. Facade
 - `Facade` được thiết kế như một cây cầu để người lập trình tiếp cận với "Service" một cách dễ dàng. Bạn có thể sử dụng Facade gần như mọi lúc mọi nơi mà không phải mất công khởi tạo, resolve các instance từ trong Service Container.
 - Bản chất của một `Facade` là sử dụng instance của class nào, và nếu khi nào có vấn đề gì cần phải xem code của Framework thì cũng biết được nơi nào để mà tìm. Chẳng hạn như để tìm hiểu về các hàm của Facade `Request` thì bạn nên tìm đến class Illuminate\Http\Request, với Auth thì là Illuminate\Auth\AuthManager hay Mail thì là Illuminate\Mail\Mailer.
+- Danh sách các class facade tham chiếu đến: 
+https://laravel.com/docs/5.5/facades#facade-class-reference
+
+
