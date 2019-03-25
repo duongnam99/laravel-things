@@ -8,17 +8,19 @@
     - `Route middleware` là gắn một middleware với một route xác định, trước khi gắn một route với một middleware phải liệt kê chúng vào thuộc tính $routeMiddleware trong class app/Http/Kernel.php.
     - Ở ví dụ này, ta đăng kí checkAge trong `$routeMiddleware` với tên: `checkage`
 - Gán middleware vào route để check xác thực: 
-    `
+    ```
     Route::get('/dashboard', function () {
     //
-})->middleware('auth', 'checkage');`
+    })->middleware('auth', 'checkage'); 
+    ```
 - Ở đây ta sử dụng 2 mdw: auth và checkage vừa tạo 
-- có thể truyền tham số vào middleware (thêm biến ở hàm handle), khi đó, tại route, với mdw là `role`, ta truyền giá trị của biến là `superadmin` theo cú pháp: 
-`Route::get('/role',[
+- có thể truyền tham số vào middleware (thêm biến ở hàm handle), khi đó, tại route, với mdw là `role`, ta truyền giá trị của biến là `superadmin` theo cú pháp:   
+```
+Route::get('/role',[
    'middleware' => 'role:superadmin',
    'uses' => 'MainController@checkRole',
 ]);
-`
+```
 - các middleware có thể nhóm thành 1 key duy nhất như `web`, `api`...
 
 - Đôi khi một Middleware cần làm vài việc sau khi HTTP response được gửi đến trình duyệt, ví dụ một middleware sẽ ghi dữ liệu session vào storage khi HTTP response đã gửi đến trình duyệt. Để làm việc này bạn chỉ cần định nghĩa một hàm tên là `terminate` trong Middleware đó, nó sẽ được gọi đến khi HTTP response gửi đến trình duyệt
