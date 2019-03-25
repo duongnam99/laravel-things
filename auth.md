@@ -21,4 +21,4 @@
 `
 - các middleware có thể nhóm thành 1 key duy nhất như `web`, `api`...
 
-
+- Đôi khi một Middleware cần làm vài việc sau khi HTTP response được gửi đến trình duyệt, ví dụ một middleware sẽ ghi dữ liệu session vào storage khi HTTP response đã gửi đến trình duyệt. Để làm việc này bạn chỉ cần định nghĩa một hàm tên là `terminate` trong Middleware đó, nó sẽ được gọi đến khi HTTP response gửi đến trình duyệt
