@@ -14,7 +14,7 @@
 
 ## 3. Service Providers
 - `Service provider`: trung tâm của laravel bootstraping. là trung tâm của việc khởi tạo tất cả các ứng dụng trong Laravel, các thành phần core sẽ được khởi tạo từ Service Provider, Các Service Provider là nơi sẽ thực hiện việc khai báo service và bind vào trong Service Container.
-- Chỉ có duy nhất boostrap/app.php thực hiện binding trực tiếp các service, ngoài ra, tất cả đều dc đăng kí tên class để thực hiện binding tong mảng providers trong config/app.php
+- Chỉ có duy nhất boostrap/app.php thực hiện binding trực tiếp các service, ngoài ra, tất cả đều dc đăng kí tên class để thực hiện binding trong mảng providers trong config/app.php
 - tham khảo:
 https://viblo.asia/p/laravel-beauty-tim-hieu-ve-service-provider-zb7vDVJnMjKd
 https://viblo.asia/p/tim-hieu-service-provider-trong-laravel-bWrZngBrlxw
